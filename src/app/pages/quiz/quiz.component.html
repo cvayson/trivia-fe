@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <header>
+        <div class="logo">
+            
+        </div>
+    </header>
+    <div class="content">
+        <div class="question" *ngIf="contentQuestion">
+            <p>{{this.questions[counter].question}}</p>
+        </div>
+        <div class="answers"*ngIf="conentAnswers">
+            <button (click)="nextQuestion(this.questions[counter].correctAnswer)">{{this.questions[counter].correctAnswer}}</button>
+            <button *ngFor="let answer of this.questions[counter].incorrectAnswers" (click)="nextQuestion(answer)">{{answer}}</button>
+            
+        
+        </div>
+        <div class="play_again" *ngIf="playAgain">
+            <h2>You correctly answered:{{correct}}/{{counter+1}}</h2>
+            <button (click)="getQuiz()">Play again</button>
+            <button (click)="exit()">Exit</button>
+        </div>
+        
+    </div>
+   
+</div>

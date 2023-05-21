@@ -1,0 +1,34 @@
+<div class="home_cover" [style.display]="showHome ?'block':'none'">
+    <button class="new_game"(click)="this.choose()">New game</button>
+</div>
+<div class="category_difficulty" [style.display]="showChoose ?'block':'none'">
+    <header>
+        <div class="logo" (click)="choose()">
+            
+        </div>
+    </header>
+    <div class="choice">
+        <h3 class="h_category">Select category and difficulty</h3>
+       <div class="choose_difficulty">
+        <input type="radio" value="easy" [(ngModel)]="selectDifficulty">
+        <label>easy</label>
+       </div>
+       <div class="choose_difficulty">
+        <input type="radio" value="medium"[(ngModel)]="selectDifficulty">
+        <label>medium</label>
+       </div>
+       <div class="choose_difficulty">
+        <input type="radio" value="hard"[(ngModel)]="selectDifficulty">
+        <label>hard</label>
+       </div>
+
+       <select [(ngModel)]="selectCategory" >
+        <option *ngFor="let category of categories" >{{category}}</option>
+            
+        </select>
+        <div class="play">
+        <button (click)="startQuiz()">Play</button>
+        <button (click)="startQuiz()">Play random</button>
+    </div>
+</div>
+</div>
